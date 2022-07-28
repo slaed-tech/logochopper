@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <title>Logochopper</title>
+</head>
+<body>
+    @@include('modules/_header.html')
+    <main id="main" class="main">
+        @@include('components/_hero.html', {
+            "addclass": "hero__cases",
+            "title": "Dinarys",
+        })
+        <section id="case-info" class="case-info">
+            <div class="main_container">
+                <ul class="info__wrap list-reset">
+                    <li class="item item-1">
+                        <p class="title">Кліент</p>
+                        <p class="desc">Teliqon</p>
+                    </li>
+                    <li class="item item-2">
+                        <p class="title">Послуга</p>
+                        <p class="desc">Розробка логотипу<br> та айдентики</p>
+                    </li>
+                    <li class="item item-3">
+                        <p class="title">Рік</p>
+                        <p class="desc">2022</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="case-present" class="case-present">
+            <div class="main_container">
+                <div style="background: url('img/cases/livety/livety_mockup-cards.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                <p class="desc">Ми команда дизайнера і маркетолога, яка допомогає малому<br> та середньому бізнесу відрізнятися, шляхом цікавого<br> та запам’ятовуючого фірмового стилю</p>
+                <div class="image__wrap image__wrap-1">
+                    <div style="background: url('img/cases/elhunt/elhunt_mockup-shirt.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                    <div style="background: url('img/cases/boost2be/boost2be_mockup-cards.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                </div>
+                <div style="background: url('img/cases/livety/livety_mockup-watch.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                <div style="background: url('img/cases/livety/livety_mockup-cups.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                <p class="desc">Ми команда дизайнера і маркетолога, яка допомогає малому<br> та середньому бізнесу відрізнятися, шляхом цікавого<br> та запам’ятовуючого фірмового стилю</p>
+                <div class="image__wrap image__wrap-2">
+                    <div style="background: url('img/cases/elhunt/elhunt_mockup-shirt.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                    <div style="background: url('img/cases/livety/livety_logo.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                    <div style="background: url('img/cases/livety/livety_logo1.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                </div>
+                <div style="background: url('img/cases/boost2be/boost2be_mockup-cards1.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                <div class="image__wrap image__wrap-3">
+                    <div style="background: url('img/cases/boost2be/boost2be_mockup-watch.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                    <div style="background: url('img/cases/boost2be/boost2be_logo1.jpg') center no-repeat; background-size: cover;" class="image"></div>
+                </div>
+            </div>
+        </section>
+        <section id="cases-nav" class="cases-nav">
+            <div class="main_container">
+                <div class="nav__wrap">
+                    <div class="direction__wrap">
+                        <a href="#" class="direction prev">
+                            <svg class="arrow arrow-prev" width="48" height="16" viewBox="0 0 48 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.292893 7.29289C-0.0976295 7.68341 -0.0976296 8.31658 0.292892 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31945 8.07107 0.928929C7.68054 0.538404 7.04738 0.538404 6.65685 0.928929L0.292893 7.29289ZM48 7L1 7L1 9L48 9L48 7Z" fill="black"/>
+                            </svg>
+                            <div class="info__wrap">
+                                <p class="title">Dinarys</p>
+                                <p class="desc">Логотип, фірмовий стиль</p>
+                            </div>
+                        </a>
+                        <a href="#" class="direction next">
+                            <div class="info__wrap">
+                                <p class="title">Dinarys</p>
+                                <p class="desc">Логотип, фірмовий стиль</p>
+                            </div>
+                            <svg class="arrow arrow-next" width="48" height="16" viewBox="0 0 48 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M47.7071 8.70711C48.0976 8.31659 48.0976 7.68342 47.7071 7.2929L41.3431 0.928936C40.9526 0.538411 40.3195 0.538411 39.9289 0.928936C39.5384 1.31946 39.5384 1.95262 39.9289 2.34315L45.5858 8L39.9289 13.6569C39.5384 14.0474 39.5384 14.6805 39.9289 15.0711C40.3195 15.4616 40.9526 15.4616 41.3431 15.0711L47.7071 8.70711ZM-8.74228e-08 9L47 9L47 7L8.74228e-08 7L-8.74228e-08 9Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                    @@include('components/_button.html', {
+                        "title": "Замовити логотип",
+                        "link": "",
+                        "addclass": "price__btn pop-up_form",
+                        "style": "btn-3",
+                        "padding": "26px 78px",
+                        "data-popup-id": ".tariff__logo",
+                        "onclick": "javascript:popExpand(document.querySelector(`${this.getAttribute('data-popup-id')}`))",
+                    })
+                </div>
+            </div>
+        </section>
+        @@include('modules/_footer.html')
+    </main>
+    @@include('components/_goback.html', {
+        "start": "#case-present",
+    })
+
+    @@include('components/popup_form.html', {
+        "popUp__title": "Замовити логотип",
+        "popUp__addclass": "",
+
+        "form_style": "form_vert",
+        "form_label_name": "Як вас звати?",
+        "form_label_email": "Ваш email",
+        "form_label_tel": "Телефон з мессенджером",
+
+        "btn_title": "залишити заявку",
+        "btn_addclass": "form__btn",
+        "btn_style": "btn-1",
+        "btn_padding": "26px 78px",
+    })
+
+    @@include('components/popup_form.html', {
+        "popUp__title": "Тариф “логотип”",
+        "popUp__addclass": "tariff__logo",
+
+        "form_style": "form_vert",
+        "form_label_name": "Як вас звати?",
+        "form_label_email": "Ваш email",
+        "form_label_tel": "Телефон з мессенджером",
+
+        "btn_title": "залишити заявку",
+        "btn_addclass": "form__btn",
+        "btn_style": "btn-1",
+        "btn_padding": "26px 78px",
+    })
+
+    @@include('components/popup_callback.html', {
+        "btn_title": "закрити",
+        "btn_link": "",
+        "btn_addclass": "close__btn",
+        "btn_style": "btn-1",
+        "btn_padding": "26px 78px",
+    })
+
+    @@include('components/_scripts.html')
+</body>
+</html>
