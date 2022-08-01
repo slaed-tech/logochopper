@@ -15,6 +15,31 @@
                     <li class="item item7"><a href="#blog" class="link nav__link7">Блог</a></li>
                     <li class="item item8"><a href="#footer" class="link nav__link8">Контакти</a></li>
                 </ul>
+                <div class="right">
+                    <div class="social__wrap">
+                        <a href="https://www.facebook.com/" class="social__link link social s-1">
+                            <img src="img/social/fb.svg" alt="facebook" class="ico">
+                        </a>
+                        <a href="https://www.instagram.com/" class="social__link link social s-2">
+                            <img src="img/social/inst.svg" alt="instagram" class="ico">
+                        </a>
+                        <a href="https://www.behance.net/" class="social__link link social s-3">
+                            <img src="img/social/be.svg" alt="behance" class="ico">
+                        </a>
+                        <a href="https://dribbble.com/" class="social__link link social s-4">
+                            <img src="img/social/dr.svg" alt="dribble" class="ico">
+                        </a>
+                    </div>
+                    @@include('../components/_button.html', {
+                        "title": "Замовити логотип",
+                        "addclass": "burger__btn pop-up_form",
+                        "link": "",
+                        "style": "btn-1",
+                        "padding": "26px 72px",
+                        "data-popup-id": ".type__form",
+                        "onclick": "javascript:popExpand(document.querySelector(`${this.getAttribute('data-popup-id')}`))",
+                    })
+                </div>
             </nav>
             <div class="btn__wrap">
                 @@include('../components/_button.html', {
@@ -31,6 +56,11 @@
                     "style": "btn-1",
                     "padding": "20px 45px",
                 })
+            </div>
+            <div class="burger-menu__btn">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
             </div>
         </div>
     </div>

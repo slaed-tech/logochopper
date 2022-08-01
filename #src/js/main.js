@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Form validate went wrong: ${error}`);
     }
 
-    try {
-        formLabel();
-    } catch (error) {
-        console.log(`Form label went wrong: ${error}`);
-    }
+    // try {
+    //     formLabel();
+    // } catch (error) {
+    //     console.log(`Form label went wrong: ${error}`);
+    // }
 
     try {
         popUpInit();
@@ -41,27 +41,68 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
         console.log(`CAN'T FIND HEADER: ${error}`);
     }
+
+    try {
+        burgerMenu();
+    } catch (error) {
+        console.log(`CAN'T FIND BURGER MENU: ${error}`);
+    }
 })
 
 // FUNCTIONS
+// burger menu
+function burgerMenu() {
+    let header = document.querySelector("header");
+    let nav = document.querySelector("nav");
+    let nav_list = nav.querySelector(".nav__wrap");
+    let nav_btn = document.querySelector(".burger-menu__btn");
+    let nav_link = nav.querySelectorAll(".link");
+
+    let body = document.querySelector("body");
+
+    if (nav != undefined || nav != null) {
+        
+        nav_btn.addEventListener("click", () => {
+            nav_btn.classList.toggle("active");
+            nav.classList.toggle("active");
+            
+            body.classList.toggle("stop-scroll");
+        })
+
+        nav_link.forEach(el => {
+            el.addEventListener("click", () => {
+                nav_btn.classList.toggle("active");
+                nav.classList.toggle("active");
+                
+                body.classList.toggle("stop-scroll");
+            })
+        })
+
+    } else {
+        console.log("CAN'T FIND NAV");
+    }    
+}
+
 // header behaviour
 function headerBehaviour() {
     let lastScrollTop = 0;
     window.addEventListener("scroll", () => {
-        let nav = document.querySelector('header');
-        if (nav != undefined || nav != null) {
-            let offsetTop = nav.offsetTop + window.scrollY;
+        let header = document.querySelector('header');
+        let nav = header.querySelector(".nav__wrap");
+
+        if (header != undefined || header != null) {
+            let offsetTop = header.offsetTop + window.scrollY;
             let st = window.pageYOffset || document.documentElement.scrollTop;
 
             if (st > lastScrollTop && offsetTop != 0){
-                nav.classList.remove("fixed");
-                nav.classList.remove("static");
+                header.classList.remove("fixed");
+                header.classList.remove("static");
             } else if (st < lastScrollTop && offsetTop != 0) {
-                nav.classList.remove("static");
-                nav.classList.add("fixed");
+                header.classList.remove("static");
+                header.classList.add("fixed");
             } else {
-                nav.classList.add("static");
-                nav.classList.remove("fixed");
+                header.classList.add("static");
+                header.classList.remove("fixed");
             }
             lastScrollTop = st <= 0 ? 0 : st;
         } else {
@@ -160,11 +201,13 @@ function goBackInit() {
         let btn = select(back, ".ico_wrap");
     
         let start = select(document, btn.getAttribute('data-start'));
+        let footer = document.querySelector('footer');
 
         let offsetTop_back = back.offsetTop + window.scrollY;
         let offsetTop_start = start.offsetTop;
+        let offsetTop_footer = footer.offsetTop;
 
-        if (offsetTop_back > offsetTop_start) {
+        if (offsetTop_back > offsetTop_start && offsetTop_back < offsetTop_footer) {
             btn.classList.add("active");
         } else {
             btn.classList.remove("active");
@@ -172,20 +215,20 @@ function goBackInit() {
     })
 }
 
-function formLabel() {
-    let input_label = select(select(document, ".form_gor"), "label");
-    let btn_label   = selectAll(document, ".form_gor_label");
-    let il_style = window.getComputedStyle(input_label);
+// function formLabel() {
+//     let input_label = document.querySelector(".form_gor").querySelector("label[for='phone']");
+//     let btn_label   = document.querySelectorAll(".form_gor_label");
+//     let il_style = window.getComputedStyle(input_label);
 
 
-    let il_height = input_label.clientHeight;
-    let il_margin = il_style.marginBottom;
-    let bl_height = parseInt(il_height) + parseInt(il_margin);
+//     let il_height = input_label.offsetHeight;
+//     let il_margin = il_style.marginBottom;
+//     let bl_height = parseInt(il_height) + parseInt(il_margin);
 
-    btn_label.forEach(el => {
-        el.style.height = `${bl_height}px`;
-    })
-}
+//     btn_label.forEach(el => {
+//         el.style.height = `${bl_height}px`;
+//     })
+// }
 
 // init tel valid
 function intlTelInit() {
