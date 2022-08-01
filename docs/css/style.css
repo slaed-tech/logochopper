@@ -2112,6 +2112,9 @@ header.fixed {
   }
 }
 @media screen and (max-width: 1110px) {
+  .hero .hero__wrap {
+    padding-top: 0 !important;
+  }
   .main_container {
     max-width: 900px;
   }
