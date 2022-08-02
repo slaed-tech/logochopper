@@ -1765,7 +1765,7 @@ header {
     .hero__component .hero__wrap .hero__subtitle .hyper {
         font-size: 18px;
     }
-    .hero .hero__wrap .hero__title {
+    .hero__cases .hero__wrap .hero__title {
         font-size: 72px !important;
     }
     .case-present .image {
@@ -1835,7 +1835,7 @@ header {
     .hero .hero__wrap .hero__title {
         margin-bottom: 30px;
     }
-    .hero .hero__wrap .hero__subtitle {
+    .hero__main .hero__wrap .hero__subtitle {
         margin-bottom: 50px;
     }
     .about-us {
@@ -2119,6 +2119,13 @@ header {
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    .blog_container {
+        max-width: 100%;
+    }
+    .blog-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -2333,14 +2340,14 @@ header {
     .hero__component .hero__wrap .hero__subtitle .hyper {
         font-size: 16px;
     }
-    .hero .hero__wrap .hero__title {
+    .hero__cases .hero__wrap .hero__title {
         font-size: 57px !important;
     }
 
 }
 
 @media screen and (max-width: 480px) {
-    .hero .hero__wrap .hero__title {
+    .hero__cases .hero__wrap .hero__title {
         font-size: 36px;
     }
     body {
@@ -2399,7 +2406,7 @@ header {
     .social__link .ico {
         width: 30px !important;
     }
-    .hero .hero__wrap .hero__subtitle {
+    .hero__main .hero__wrap .hero__subtitle {
         margin-bottom: 40px;
         font-size: 14px !important;
         line-height: 130% !important;
@@ -2565,7 +2572,7 @@ header {
     .hero__component .hero__wrap .hero__subtitle .hyper {
         font-size: 14px;
     }
-    .hero .hero__wrap .hero__title {
+    .hero__cases .hero__wrap .hero__title {
         font-size: 46px !important;
     }
     .case-info .info__wrap {
@@ -2621,7 +2628,14 @@ header {
     .cases-nav .direction__wrap .direction:hover .arrow-prev {
         transform: none !important;
     }
-    .hero .hero__wrap {
+    .hero__main .hero__wrap {
         padding-bottom: 40% !important;
+    }
+    .hero .hero__wrap .hero__subtitle {
+        font-size: 14px;
+
+        .hyper {
+            font-size: 14px;
+        }
     }
 }
