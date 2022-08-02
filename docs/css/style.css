@@ -2884,7 +2884,7 @@ header.fixed {
     row-gap: 15px;
   }
   header .header__wrap .right .social__wrap {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .popup_wrapper .popup.form {
     width: 90%;
@@ -2918,5 +2918,8 @@ header.fixed {
   }
   .about-us__wrap .stats__wrap {
     height: 357px;
+  }
+  header nav {
+    row-gap: 30px;
   }
 }
