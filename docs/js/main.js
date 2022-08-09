@@ -11174,7 +11174,6 @@ function formValidateInit() {
         let valid = isValid(form);
 
         // set form data
-        let formData = new FormData(form);
 
         // callback
         if (valid) {
@@ -11275,7 +11274,8 @@ function formValidateInit() {
 
     // name test
     function nameTest(input) {
-        return true;
+        if (input.length > 0) return true;
+        else return false;
     }
 }
 

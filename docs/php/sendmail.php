@@ -7,7 +7,6 @@
 
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
-    $mail->isHTML(true);
 
     // to
     $mail->addAddress('logochopper@gmail.com');
