@@ -172,7 +172,7 @@
                     "btn_title": "розповісти",
                     "btn_addclass": "form__btn",
                     "btn_style": "btn-3",
-                    "btn_padding": "26px 78px",
+                    "btn_padding": "20px 78px",
                 })     
             </div>
         </section>
@@ -317,7 +317,7 @@
                             "addclass": "price__btn pop-up_form",
                             "style": "btn-1",
                             "padding": "26px 78px",
-                            "data-popup-id": ".tariff__logo",
+                            "data-popup-id": ".tariff__logobook",
                             "onclick": "javascript:popExpand(document.querySelector(`${this.getAttribute('data-popup-id')}`))",
                         })
                         
@@ -338,7 +338,7 @@
                             "addclass": "price__btn pop-up_form",
                             "style": "btn-3",
                             "padding": "26px 78px",
-                            "data-popup-id": ".tariff__logo",
+                            "data-popup-id": ".tariff__indetify",
                             "onclick": "javascript:popExpand(document.querySelector(`${this.getAttribute('data-popup-id')}`))",
                         })
                         
@@ -359,7 +359,7 @@
                             "addclass": "price__btn pop-up_form",
                             "style": "btn-1",
                             "padding": "26px 78px",
-                            "data-popup-id": ".tariff__logo",
+                            "data-popup-id": ".tariff__style",
                             "onclick": "javascript:popExpand(document.querySelector(`${this.getAttribute('data-popup-id')}`))",
                         })
                     </li>
@@ -460,8 +460,38 @@
     })
 
     @@include('components/popup_form.html', {
-        "popUp__title": "Тариф “логотип”",
-        "popUp__addclass": "tariff__logo",
+        "popUp__title": "Тариф “ЛОГОБУК”",
+        "popUp__addclass": "tariff__logobook",
+
+        "form_style": "form_vert",
+        "form_label_name": "Як вас звати?",
+        "form_label_email": "Ваш email",
+        "form_label_tel": "Телефон з мессенджером",
+
+        "btn_title": "залишити заявку",
+        "btn_addclass": "form__btn",
+        "btn_style": "btn-1",
+        "btn_padding": "26px 78px",
+    })
+
+    @@include('components/popup_form.html', {
+        "popUp__title": "Тариф “АЙДЕНТИКА”",
+        "popUp__addclass": "tariff__indetify",
+
+        "form_style": "form_vert",
+        "form_label_name": "Як вас звати?",
+        "form_label_email": "Ваш email",
+        "form_label_tel": "Телефон з мессенджером",
+
+        "btn_title": "залишити заявку",
+        "btn_addclass": "form__btn",
+        "btn_style": "btn-1",
+        "btn_padding": "26px 78px",
+    })
+
+    @@include('components/popup_form.html', {
+        "popUp__title": "Тариф “ФІРМОВИЙ СТИЛЬ”",
+        "popUp__addclass": "tariff__style",
 
         "form_style": "form_vert",
         "form_label_name": "Як вас звати?",

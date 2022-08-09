@@ -10956,7 +10956,7 @@ function burgerMenu() {
                 nav_btn.classList.toggle("active");
                 nav.classList.toggle("active");
                 
-                body.classList.toggle("stop-scroll");
+                body.classList.remove("stop-scroll");
             })
         })
 
@@ -11165,7 +11165,7 @@ function formValidateInit() {
 
     // on submit
     for (let i = 0; i < form.length; i++) {
-        form[i].addEventListener("submit", (e) => { e.preventDefault(); formSend(form[i]) });
+        form[i].addEventListener("submit", (e) => { formSend(form[i]) });
     }
 
     // form send
@@ -11173,13 +11173,46 @@ function formValidateInit() {
         // test for valid
         let valid = isValid(form);
 
+        // set form data
+        let formData = new FormData(form);
+
         // callback
         if (valid) {
+            // send to mail
+
             popClose(form.parentNode.parentNode);
             popExpand(document.querySelector(POP_CALLBACK_SELECTOR));
         } else {
             console.log(`ERROR ON: ${form}`);
         }
+
+        // functions
+        // async function formSubmit() {
+        //     const data = serializeForm(form);
+        //     const response = await sendData(data);
+        //     if (response.ok) {
+        //         let result = await response.json();
+        //         alert(result.message);
+        //         formReset();
+        //     } else {
+        //         alert("Код ошибки: " + response.status);
+        //     }
+        // }
+        
+        // function serializeForm(formNode) {
+        //     return new FormData(form);
+        // }
+        
+        // async function sendData(data) {
+        //     return await fetch("../php/sendmail.php", {
+        //         method: "POST",
+        //         body: data,
+        //     });
+        // }
+        
+        // function formReset() {
+        //     form.reset();
+        // }
     }
 
     // is valid
@@ -11242,7 +11275,7 @@ function formValidateInit() {
 
     // name test
     function nameTest(input) {
-        return /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/g.test(input.value);
+        return true;
     }
 }
 

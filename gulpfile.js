@@ -10,6 +10,7 @@ let path = {
         HTML:   `${PROJECT_FOLDER}/`,
         CSS:    `${PROJECT_FOLDER}/css`,
         JS:     `${PROJECT_FOLDER}/js`,
+        PHP:    `${PROJECT_FOLDER}/php`,
         IMG:    `${PROJECT_FOLDER}/img`,
         FONTS:  `${PROJECT_FOLDER}/fonts`,
     },
@@ -17,6 +18,7 @@ let path = {
         HTML:   [`${SOURCE_FOLDER}/*.html`, `!${SOURCE_FOLDER}/_*.html`],
         CSS:    `${SOURCE_FOLDER}/scss/style.scss`,
         JS:     `${SOURCE_FOLDER}/js/**/*.js`,
+        PHP:    `${SOURCE_FOLDER}/php/**/*.*`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
         FONTS:  `${SOURCE_FOLDER}/fonts/**/*.woff`,
     },
@@ -24,6 +26,7 @@ let path = {
         HTML:   `${SOURCE_FOLDER}/**/*.html`,
         CSS:    `${SOURCE_FOLDER}/scss/**/*.scss`,
         JS:     `${SOURCE_FOLDER}/js/**/*.js`,
+        PHP:    `${SOURCE_FOLDER}/php/**/*.*`,
         IMG:    `${SOURCE_FOLDER}/img/**/*.+(png|jpg|gif|ico|svg|webp)`,
     },
     clean: {
@@ -109,6 +112,12 @@ function js() {
     .pipe(browsersync.stream());
 }
 
+function php() {
+    return src(path.src.PHP)
+    .pipe(dest(path.build.PHP))
+    .pipe(browsersync.stream());
+}
+
 function img() {
     return src(path.src.IMG)
         .pipe(
@@ -152,6 +161,7 @@ function watchFiles() {
     gulp.watch([path.watch.HTML], html);
     gulp.watch([path.watch.CSS], css);
     gulp.watch([path.watch.JS], js);
+    gulp.watch([path.watch.PHP], php)
     gulp.watch([path.watch.IMG], img);
 }
 
@@ -159,7 +169,7 @@ function clean() {
     return del(path.clean.DIST);
 }
 
-let build = gulp.series(clean, gulp.parallel(html, css), js, img, fonts, fontsStyle)
+let build = gulp.series(clean, gulp.parallel(html, css), js, php, img, fonts, fontsStyle)
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // Export
